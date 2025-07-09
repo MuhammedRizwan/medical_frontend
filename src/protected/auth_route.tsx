@@ -18,7 +18,5 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     }
   }, [user, router]);
 
-  if (!user) return null; 
-
   return <>{children}</>;
 }
