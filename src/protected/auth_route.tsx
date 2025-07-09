@@ -13,7 +13,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user) {
+    if (user) {
       router.replace('/dashboard'); 
     }
   }, [user, router]);
