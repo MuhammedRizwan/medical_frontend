@@ -25,12 +25,12 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-  <aside className="fixed top-0 left-0 z-30 w-20 md:w-64 h-screen bg-white shadow-md flex flex-col justify-between py-2 md:py-6 px-4 border-r-2 border-gray-300">
+  <aside className="fixed top-0 left-0 z-30 w-20 md:w-64 h-screen bg-white shadow-md flex flex-col justify-between py-2 md:py-5 px-4 border-r-2 border-gray-300">
       <div>
         <div className="mb-10">
-         <h1 className="text-blue-600 text-3xl font-medium leading-tight">
+         <h1 className="text-blue-600 text-2xl font-medium leading-tight">
           life support <br />
-          <div className="flex text-3xl font-medium tracking-wide">
+          <div className="flex text-2xl font-medium tracking-wide">
             learning 
             <div>
               <p className='text-xs'>powered by</p>

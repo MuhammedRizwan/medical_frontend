@@ -7,7 +7,7 @@ export default function UpcomingLiveClass() {
       <div className="md:w-2/3 space-y-2">
         <p className="text-sm text-blue-500 font-medium">Upcoming Live class</p>
 
-        <h3 className="text-2xl md:text-3xl font-semibold text-black leading-snug">
+        <h3 className="text-xl md:text-3xl font-semibold text-black leading-snug">
           Real-Time Surgical Annotations
           <br />
           Heart Surgery

@@ -49,8 +49,8 @@ export default function ActiveLessonsPage() {
                         <Image src={lesson.icon} alt={lesson.title} width={28} height={28} />
                     </div>
                     <div>
-                        <h4 className="text-base font-semibold text-black">{lesson.title}</h4>
-                        <p className="text-sm text-black font-bold">{lesson.description}</p>
+                        <h4 className="text-sm font-semibold text-black">{lesson.title}</h4>
+                        <p className="text-xs text-black font-bold">{lesson.description}</p>
                     </div>
                 </div>
             ))}
