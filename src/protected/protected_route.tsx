@@ -4,17 +4,16 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import { RootState } from '@/store/persist_store';
 
-interface AuthRouteProps {
+interface ProtectedRouteProps {
   children: ReactNode;
 }
 
-export default function AuthRoute({ children }: AuthRouteProps) {
-  const user = useSelector((state: RootState) => state.user.user);
+export default function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const user = useSelector((state: RootState) => state.user.user?._id);
   const router = useRouter();
-
   useEffect(() => {
-    if (user) {
-      router.replace('/dashboard'); 
+    if (!user) {
+      router.replace('/'); 
     }
   }, [user, router]);
 

@@ -9,9 +9,6 @@ import { useSelector } from "react-redux";
 export default function DashboardPage() {
   const router=useRouter()
    const user = useSelector((state: RootState) => state.user.user?._id); 
-    if(!user){
-        router.push('/')
-    }
   return (
     <div className="space-y-6">
       <div>

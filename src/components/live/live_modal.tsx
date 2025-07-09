@@ -54,10 +54,17 @@ export default function LiveModal({
 
     useEffect(() => {
         if (defaultData) {
+            const liveStart = defaultData.liveStart
+                ? new Date(defaultData.liveStart).toISOString().slice(0, 16)
+                : '';
+            const liveEnd = defaultData.liveEnd
+                ? new Date(defaultData.liveEnd).toISOString().slice(0, 16)
+                : '';
+
             reset({
                 ...defaultData,
-                liveStart: new Date(defaultData.liveStart).toISOString().slice(0, 16),
-                liveEnd: new Date(defaultData.liveEnd).toISOString().slice(0, 16),
+                liveStart,
+                liveEnd,
             });
         } else {
             reset({
@@ -70,6 +77,7 @@ export default function LiveModal({
             });
         }
     }, [defaultData, isOpen, reset]);
+
 
     if (!isOpen) return null;
 

@@ -1,12 +1,19 @@
 'use client'
 import { RootState } from '@/store/persist_store';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 
 export default function TopBar() {
-      const user = useSelector((state: RootState) => state.user.user);
-
+    const user = useSelector((state: RootState) => state.user.user);
+    const router = useRouter();
+    useEffect(() => {
+        if (!user) {
+            router.replace('/');
+        }
+    }, [user, router]);
     return (
         <header className="flex items-center justify-between w-full px-4 py-2 md:px-6 bg-white">
             <h2 className="text-xl md:text-2xl font-semibold text-black">

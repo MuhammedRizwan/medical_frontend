@@ -17,9 +17,6 @@ export default function LiveGrid() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [editData, setEditData] = useState<ILive | null>(null);
      const user = useSelector((state: RootState) => state.user.user); 
-    if(!user?._id){
-        router.push('/')
-    }
     useEffect(() => {
         const fetchSessions = async () => {
             if (!user?._id) return;
@@ -39,8 +36,8 @@ export default function LiveGrid() {
         setModalOpen(true);
     };
 
-    const handleDelete = (title: string) => {
-        setSessions((prev) => prev.filter((s) => s.liveName !== title));
+    const handleDelete = (liveName: string) => {
+        setSessions((prev) => prev.filter((s) => s.liveName !== liveName));
     };
 
     const handleSubmit = (updated: ILive) => {
