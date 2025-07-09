@@ -7,12 +7,8 @@ import ILive from '@/interface/live';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/persist_store';
 import { getAll } from '@/service/live_service';
-import { useRouter } from 'next/navigation';
-
-
 
 export default function LiveGrid() {
-    const router=useRouter()
     const [sessions, setSessions] = useState<ILive[]>([])
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [editData, setEditData] = useState<ILive | null>(null);
